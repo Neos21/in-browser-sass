@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <!-- SASS : Link Tag -->
+    <link rel="stylesheet" type="text/sass" href="index.sass">
+    <style type="text/css">
+
+/* Normal CSS */
+body {
+  background: #eff;
+}
+
+    </style>
+    <!-- SCSS : Link Tag -->
+    <link rel="stylesheet" type="text/scss" href="index.scss">
+    <style type="text/scss">
+
+// SCSS : Style Tag
+body {
+  .test {
+    color: #09f;
+  }
+}
+
+    </style>
+    <script src="sass-0.10.7.sync.min.js"></script>
+    <script>
+
+/** SASS・SCSS ソースコードを CSS にコンパイルし style 要素として元要素の直後に挿入する */
+function inBrowserSass() {
+  const compileAndInsert = (originalElem, source, isSass) => {
+    Sass.compile(source, { indentedSyntax: isSass }, (compiledCss) => {
+      const styleElem = document.createElement('style');
+      styleElem.type = 'text/css';
+      styleElem.innerHTML = compiledCss.text;
+      originalElem.parentElement.insertBefore(styleElem, originalElem.nextSibling);
+    });
+  };
+  
+  // style 要素と link 要素を取得し処理する
+  Array.prototype.forEach.call(document.querySelectorAll('style, link'), (elem) => {
+    // type 属性値
+    const typeAttr = elem.type.toLowerCase();
+    
+    // type 属性値が text/sass もしくは text/scss でなければ除外する
+    if(typeAttr !== 'text/sass' && typeAttr !== 'text/scss') {
+      return;
+    }
+    
+    // SASS 記法は indentedSyntax: true オプションでコンパイルする必要があるので SASS 記法かどうか判定する
+    const isSass = typeAttr === 'text/sass';
+    
+    // 要素ごとに処理する
+    if(elem.tagName.toLowerCase() === 'style') {
+      // style 要素は innerHTML でテキストを取得したらコンパイルする
+      compileAndInsert(elem, elem.innerHTML, isSass);
+    }
+    else {
+      // link 要素は Ajax でファイルの中身を取得してからコンパイルする
+      const xhr = new XMLHttpRequest();
+      xhr.open('GET', elem.href, true);
+      xhr.onreadystatechange = () => {
+        if(xhr.readyState === 4) {
+          compileAndInsert(elem, xhr.responseText, isSass);
+        }
+      };
+      xhr.send();
+    }
+  });
+}
+
+// ブラウザの場合のみ処理する
+if(typeof document !== 'undefined') {
+  // body 要素内の style 要素も取得するため全ての DOM 解析が終わってから実行する
+  document.addEventListener('DOMContentLoaded', () => {
+    if(typeof Sass === 'undefined') {
+      // グローバルに Sass がない場合は CDN から Sass.js の取得を試みる
+      const sassElem = document.createElement('script');
+      sassElem.type = 'text/javascript';
+      sassElem.src = 'https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.10.7/sass.sync.min.js';
+      sassElem.onload = inBrowserSass;  // script 要素の onload 属性で browserSass() を実行する
+      document.head.appendChild(sassElem);
+      // NOTE : Sass.js の読み込みが失敗した場合は sassElem.onerror で確認する。appendChild() までは失敗しないのでこの処理を try catch で囲んでも意味なし
+    }
+    else {
+      // Sass が読み込んである場合は処理を実行する
+      inBrowserSass();
+    }
+  });
+}
+
+    </script>
+  </head>
+  <body>
+    
+    <p class="test">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    
+    <style type="text/sass">
+// SASS : Style Tag
+p
+  font-size: 120%
+  &:hover
+    background: #0f0
+    </style>
+  </body>
+</html>
