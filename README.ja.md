@@ -1,5 +1,7 @@
 # @neos21/in-browser-sass
 
+[![NPM Version](https://img.shields.io/npm/v/@neos21/in-browser-sass.svg)](https://www.npmjs.com/package/@neos21/in-browser-sass)
+
 ブラウザ上で SASS / SCSS コードをコンパイルし Web ページに適用するライブラリ。
 
 [English version is here](README.md)
@@ -109,3 +111,4 @@ body p {
 [Neo](http://neo.s21.xrea.com/) ([@Neos21](https://twitter.com/neos21))
 
 - [GitHub - in-browser-sass](https://github.com/Neos21GitHub/in-browser-sass)
+- [npm - @neos21/in-browser-sass](https://www.npmjs.com/package/@neos21/in-browser-sass)
