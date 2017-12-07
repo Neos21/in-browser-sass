@@ -60,9 +60,51 @@ body {
   background: #fff;  /* Override */
 }
 
+header {
+  padding: 1em 1rem;
+  font-size: 150%;
+  font-weight: bold;
+  text-align: center;
+}
+
+footer {
+  padding: 1em 1rem;
+  text-align: center;
+}
+
 pre,
 code {
   font-family: MeiryoKe_Gothic, "Ricty Diminished", "Osaka－等幅", "Osaka-等幅", Osaka-mono, "ＭＳ ゴシック", "MS Gothic", "Courier New", Courier, Monaco, Menlo, Consolas, "Lucida Console", monospace;
+}
+
+main {
+  text-align: right;
+}
+
+main > section {
+  text-align: left;
+}
+
+#is-en {
+  display: none;
+}
+
+#is-en + label::after {
+  cursor: pointer;
+  content: "English";
+}
+
+#is-en + label:hover::after {
+  color: #f09;
+}
+
+#is-en:checked + label::after {
+  content: "Japanese";
+}
+
+#is-en:not(:checked) + label + section [lang="ja"],
+#is-en:checked + label + section [lang="en"] {
+  display: none;
 }
 
     </style>
@@ -77,7 +119,7 @@ code {
 body {
   cursor: default;
   
-  h1 {
+  * {
     &::selection {
       color: #fff;
       background: #f09;
@@ -89,6 +131,11 @@ body {
       background: #f09;
     }
   }
+  
+  header a {
+    color: #000;
+    text-decoration: none;
+  }
 }
 
     </style>
@@ -99,25 +146,34 @@ body {
     <script>hljs.initHighlightingOnLoad();</script>
   </head>
   <body>
-    <section>
-      <h1>in-browser-sass</h1>
-      <p>Compile SASS / SCSS in the browser.</p>
+    <header><a href="https://github.com/Neos21GitHub/in-browser-sass">in-browser-sass</a></header>
+    <main>
+      <input type="checkbox" id="is-en" checked>
+      <label for="is-en"></label>
       <section>
-        <h2>Installation</h2>
-        <pre><code class="html">&lt;!-- Load sass.js --&gt;
+        <h1>in-browser-sass</h1>
+        <p lang="en">Compile SASS / SCSS in the browser.</p>
+        <p lang="ja">ブラウザ上で SASS / SCSS コードをコンパイルし Web ページに適用するライブラリ。</p>
+        <section>
+          <h2 lang="en">Installation</h2>
+          <h2 lang="ja">インストール方法</h2>
+          <pre><code class="html">&lt;!-- Load sass.js --&gt;
 &lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.10.7/sass.sync.min.js&quot;&gt;&lt;/script&gt;
 &lt;!-- Load this script --&gt;
 &lt;script src=&quot;in-browser-sass.js&quot;&gt;&lt;/script&gt;</code></pre>
-        <p><a href="https://github.com/medialize/sass.js">sass.js</a> CDNs are available here:</p>
-        <ul>
-          <li><a href="https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.10.7/sass.sync.min.js">https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.10.7/sass.sync.min.js</a></li>
-          <li><a href="https://unpkg.com/sass.js@0.10.7/dist/sass.sync.js">https://unpkg.com/sass.js@0.10.7/dist/sass.sync.js</a></li>
-        </ul>
-      </section>
-      <section>
-        <h2>Usage</h2>
-        <p>You can use <code>link</code> or <code>style</code> elements for include SASS / SCSS. <code>type=&quot;text/sass&quot;</code> or <code>type=&quot;text/sass&quot;</code> attribute must be set.</p>
-        <pre><code class="html">&lt;!-- SASS : link tag --&gt;
+          <p lang="en"><a href="https://github.com/medialize/sass.js">sass.js</a> CDNs are available here:</p>
+          <p lang="ja"><a href="https://github.com/medialize/sass.js">sass.js</a> の CDN は以下が利用可能。</p>
+          <ul>
+            <li><a href="https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.10.7/sass.sync.min.js">https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.10.7/sass.sync.min.js</a></li>
+            <li><a href="https://unpkg.com/sass.js@0.10.7/dist/sass.sync.js">https://unpkg.com/sass.js@0.10.7/dist/sass.sync.js</a></li>
+          </ul>
+        </section>
+        <section>
+          <h2 lang="en">Usage</h2>
+          <h2 lang="ja">使い方</h2>
+          <p lang="en">You can use <code>link</code> or <code>style</code> elements for include SASS / SCSS. <code>type=&quot;text/sass&quot;</code> or <code>type=&quot;text/sass&quot;</code> attribute must be set.</p>
+          <p lang="ja">HTML 中に <code>link</code> 要素もしくは <code>style</code> 要素で SASS / SCSS コードを挿入する。<code>type=&quot;text/sass&quot;</code> か <code>type=&quot;text/sass&quot;</code> の属性を付与すること。</p>
+          <pre><code class="html">&lt;!-- SASS : link tag --&gt;
 &lt;link rel=&quot;stylesheet&quot; type=&quot;text/sass&quot; href=&quot;example.sass&quot;&gt;
 
 &lt;!-- SCSS : link tag --&gt;
@@ -138,8 +194,9 @@ body {
   }
 }
 &lt;/style&gt;</code></pre>
-        <p>This compiles to:</p>
-        <pre><code class="html">&lt;!-- SASS : link tag --&gt;
+          <p lang="en">This compiles to:</p>
+          <p lang="ja">これが以下のようにコンパイル・適用される。</p>
+          <pre><code class="html">&lt;!-- SASS : link tag --&gt;
 &lt;link rel=&quot;stylesheet&quot; type=&quot;text/sass&quot; href=&quot;example.sass&quot;&gt;
 &lt;!-- Compiled example.sass --&gt;
 &lt;style type=&quot;text/css&quot;&gt;
@@ -187,16 +244,20 @@ body p {
   font-weight: bold;
 }
 &lt;/style&gt;</code></pre>
-        <p>Compiled <code>style</code> elements are inserted after each original element.</p>
+          <p lang="en">Compiled <code>style</code> elements are inserted after each original element.</p>
+          <p lang="ja">コンパイル後の CSS ソースを持つ <code>style</code> 要素は、元の要素の直後に挿入される。</p>
+        </section>
+        <section>
+          <h2 lang="en">Author</h2>
+          <h2 lang="ja">作者</h2>
+          <p><a href="http://neo.s21.xrea.com/">Neo</a> (<a href="https://twitter.com/neos21">@Neos21</a>)
+          <ul>
+            <li><a href="https://github.com/Neos21GitHub/in-browser-sass">GitHub - in-browser-sass</a></li>
+          </ul>
+        </section>
       </section>
-      <section>
-        <h2>Author</h2>
-        <p><a href="http://neo.s21.xrea.com/">Neo</a> (<a href="https://twitter.com/neos21">@Neos21</a>)
-        <ul>
-          <li><a href="https://github.com/Neos21GitHub/in-browser-sass">GitHub - in-browser-sass</a></li>
-        </ul>
-      </section>
-    </section>
+    </main>
+    <footer><small>Copyright &copy; 2017 <a href="http://neo.s21.xrea.com/">Neo</a>, All rights reserved.</small></footer>
     
     <style type="text/sass">
 
