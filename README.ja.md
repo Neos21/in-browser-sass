@@ -7,6 +7,11 @@
 [English version is here](README.md)
 
 
+## デモ
+
+[デモ (GitHub Pages)](https://neos21github.github.io/in-browser-sass/)
+
+
 ## インストール方法
 
 ```html

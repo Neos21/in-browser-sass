@@ -7,6 +7,11 @@ Compile SASS / SCSS in the browser.
 [Japanese version is here](README.ja.md)
 
 
+## Demo
+
+[Demo (GitHub Pages)](https://neos21github.github.io/in-browser-sass/)
+
+
 ## Installation
 
 ```html

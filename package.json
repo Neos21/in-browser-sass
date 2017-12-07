@@ -1,6 +1,6 @@
 {
   "name": "@neos21/in-browser-sass",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Compile SASS / SCSS in the browser.",
   "main": "in-browser-sass.js",
   "scripts": {
