@@ -5,43 +5,218 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>in-browser-sass</title>
-    <!-- SASS : Link Tag -->
-    <link rel="stylesheet" type="text/sass" href="index.sass">
-    <style type="text/css">
-
-/* Normal CSS */
-body {
-  background: #eff;
-}
-
-    </style>
-    <!-- SCSS : Link Tag -->
-    <link rel="stylesheet" type="text/scss" href="index.scss">
-    <style type="text/scss">
-
-// SCSS : Style Tag
-body {
-  .test {
-    color: #09f;
-  }
-}
-
-    </style>
+    
     <!-- Load Sass.js -->
     <script src="sass-0.10.7.sync.min.js"></script>
     <!-- Load in-browser-sass -->
     <script src="in-browser-sass.js"></script>
+    
+    <!-- SASS : Link Tag -->
+    <link rel="stylesheet" type="text/sass" href="example.sass">
+    
+    <style type="text/css">
+
+/* Normal CSS */
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+      -ms-box-sizing: border-box;
+       -o-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Yu Gothic M";
+  src: local("Yu Gothic Medium");
+}
+
+@font-face {
+  font-family: "Yu Gothic M";
+  src: local("Yu Gothic Bold");
+  font-weight: bold;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+html {
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+body {
+  color: #000;
+  font-family: -apple-system, BlinkMacSystemFont, "游ゴシック体", YuGothic, "Yu Gothic M", "游ゴシック Medium", "Yu Gothic Medium", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN W3", HiraKakuProN-W3, "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  -webkit-text-size-adjust: 100%;
+  word-wrap: break-word;
+  background: #fff;  /* Override */
+}
+
+pre,
+code {
+  font-family: MeiryoKe_Gothic, "Ricty Diminished", "Osaka－等幅", "Osaka-等幅", Osaka-mono, "ＭＳ ゴシック", "MS Gothic", "Courier New", Courier, Monaco, Menlo, Consolas, "Lucida Console", monospace;
+}
+
+    </style>
+    
+    <!-- SCSS : Link Tag -->
+    <link rel="stylesheet" type="text/scss" href="example.scss">
+    
+    <style type="text/scss">
+
+/* SCSS : Style Tag */
+
+body {
+  cursor: default;
+  
+  h1 {
+    &::selection {
+      color: #fff;
+      background: #f09;
+    }
+    
+    // Selection for Firefox
+    &::-moz-selection {
+      color: #fff;
+      background: #f09;
+    }
+  }
+}
+
+    </style>
+    
+    <!-- Highlight.js -->
+    <link rel="stylesheet" href="highlight-9.12.0.min.css">
+    <script src="highlight-9.12.0.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
   </head>
   <body>
-    <p class="test">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <section>
+      <h1>in-browser-sass</h1>
+      <p>Compile SASS / SCSS in the browser.</p>
+      <section>
+        <h2>Installation</h2>
+        <pre><code class="html">&lt;!-- Load sass.js --&gt;
+&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.10.7/sass.sync.min.js&quot;&gt;&lt;/script&gt;
+&lt;!-- Load this script --&gt;
+&lt;script src=&quot;in-browser-sass.js&quot;&gt;&lt;/script&gt;</code></pre>
+        <p><a href="https://github.com/medialize/sass.js">sass.js</a> CDNs are available here:</p>
+        <ul>
+          <li><a href="https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.10.7/sass.sync.min.js">https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.10.7/sass.sync.min.js</a></li>
+          <li><a href="https://unpkg.com/sass.js@0.10.7/dist/sass.sync.js">https://unpkg.com/sass.js@0.10.7/dist/sass.sync.js</a></li>
+        </ul>
+      </section>
+      <section>
+        <h2>Usage</h2>
+        <p>You can use <code>link</code> or <code>style</code> elements for include SASS / SCSS. <code>type=&quot;text/sass&quot;</code> or <code>type=&quot;text/sass&quot;</code> attribute must be set.</p>
+        <pre><code class="html">&lt;!-- SASS : link tag --&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/sass&quot; href=&quot;example.sass&quot;&gt;
+
+&lt;!-- SCSS : link tag --&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/scss&quot; href=&quot;example.scss&quot;&gt;
+
+&lt;!-- SASS : style tag --&gt;
+&lt;style type=&quot;text/sass&quot;&gt;
+body
+  p
+    color: #f00
+&lt;/style&gt;
+
+&lt;!-- SCSS : style tag --&gt;
+&lt;style type=&quot;text/scss&quot;&gt;
+body {
+  p {
+    font-weight: bold;
+  }
+}
+&lt;/style&gt;</code></pre>
+        <p>This compiles to:</p>
+        <pre><code class="html">&lt;!-- SASS : link tag --&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/sass&quot; href=&quot;example.sass&quot;&gt;
+&lt;!-- Compiled example.sass --&gt;
+&lt;style type=&quot;text/css&quot;&gt;
+body > selection {
+  font-size: 110%;
+}
+&lt;/style&gt;
+
+&lt;!-- SCSS : link tag --&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/scss&quot; href=&quot;example.scss&quot;&gt;
+&lt;!-- Compiled example.scss --&gt;
+&lt;style type=&quot;text/css&quot;&gt;
+a {
+  color: #06f;
+}
+a:hover {
+  color: #f09;
+}
+&lt;/style&gt;
+
+&lt;!-- SASS : style tag --&gt;
+&lt;style type=&quot;text/sass&quot;&gt;
+body
+  p
+    color: #f00
+&lt;/style&gt;
+&lt;!-- Compiled inline SASS --&gt;
+&lt;style type=&quot;text/css&quot;&gt;
+body p {
+  color: #ff0;
+}
+&lt;/style&gt;
+
+&lt;!-- SCSS : style tag --&gt;
+&lt;style type=&quot;text/scss&quot;&gt;
+body {
+  p {
+    font-weight: bold;
+  }
+}
+&lt;/style&gt;
+&lt;!-- Compiled inline SCSS --&gt;
+&lt;style type=&quot;text/css&quot;&gt;
+body p {
+  font-weight: bold;
+}
+&lt;/style&gt;</code></pre>
+        <p>Compiled <code>style</code> elements are inserted after each original element.</p>
+      </section>
+      <section>
+        <h2>Author</h2>
+        <p><a href="http://neo.s21.xrea.com/">Neo</a> (<a href="https://twitter.com/neos21">@Neos21</a>)
+        <ul>
+          <li><a href="https://github.com/Neos21GitHub/in-browser-sass">GitHub - in-browser-sass</a></li>
+        </ul>
+      </section>
+    </section>
     
     <style type="text/sass">
 
-// SASS : Style Tag
-p
-  font-size: 120%
-  &:hover
-    background: #0f0
+/* SASS : Style Tag */
+
+// For code blocks
+@mixin code-block
+  border: 1px solid #ccc
+  border-radius: 4px
+
+pre
+  @include code-block
+  line-height: 1.4
+  overflow: scroll
+
+*:not(pre) > code
+  @include code-block
+  font-size: 94%
+  padding: 1px 6px
+  background: #eee
 
     </style>
   </body>
