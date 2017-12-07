@@ -4,7 +4,8 @@
   "description": "Compile SASS / SCSS in the browser",
   "main": "in-browser-sass.js",
   "scripts": {
-    "http-server": "http-server"
+    "start": "http-server ./docs/",
+    "minify": "uglifyjs --compress --mangle --comments /^!/ --output in-browser-sass.min.js -- in-browser-sass.js"
   },
   "repository": {
     "type": "git",
@@ -17,6 +18,8 @@
   },
   "homepage": "https://github.com/Neos21GitHub/in-browser-sass#readme",
   "devDependencies": {
-    "http-server": "0.10.0"
+    "http-server": "0.10.0",
+    "sass.js": "0.10.7",
+    "uglify-es": "3.2.1"
   }
 }

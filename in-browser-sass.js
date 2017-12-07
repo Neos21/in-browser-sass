@@ -1,34 +1,4 @@
-<!DOCTYPE html>
-<html lang="ja">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
-    <!-- SASS : Link Tag -->
-    <link rel="stylesheet" type="text/sass" href="index.sass">
-    <style type="text/css">
-
-/* Normal CSS */
-body {
-  background: #eff;
-}
-
-    </style>
-    <!-- SCSS : Link Tag -->
-    <link rel="stylesheet" type="text/scss" href="index.scss">
-    <style type="text/scss">
-
-// SCSS : Style Tag
-body {
-  .test {
-    color: #09f;
-  }
-}
-
-    </style>
-    <script src="sass-0.10.7.sync.min.js"></script>
-    <script>
+/*! in-browser-sass v1.0.0 : Neo (@Neos21) http://neo.s21.xrea.com/ */
 
 /** SASS・SCSS ソースコードを CSS にコンパイルし style 要素として元要素の直後に挿入する */
 function inBrowserSass() {
@@ -41,7 +11,7 @@ function inBrowserSass() {
     });
   };
   
-  // style 要素と link 要素を取得し処理する
+  // style 要素と link 要素を取得する
   Array.prototype.forEach.call(document.querySelectorAll('style, link'), (elem) => {
     // type 属性値
     const typeAttr = elem.type.toLowerCase();
@@ -92,19 +62,3 @@ if(typeof document !== 'undefined') {
     }
   });
 }
-
-    </script>
-  </head>
-  <body>
-    
-    <p class="test">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    
-    <style type="text/sass">
-// SASS : Style Tag
-p
-  font-size: 120%
-  &:hover
-    background: #0f0
-    </style>
-  </body>
-</html>
