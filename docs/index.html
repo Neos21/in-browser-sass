@@ -91,7 +91,7 @@ main > section {
 
 #is-en + label::after {
   cursor: pointer;
-  content: "English";
+  content: "To English Version";
 }
 
 #is-en + label:hover::after {
@@ -99,11 +99,11 @@ main > section {
 }
 
 #is-en:checked + label::after {
-  content: "Japanese";
+  content: "To Japanese Version";
 }
 
-#is-en:not(:checked) + label + section [lang="ja"],
-#is-en:checked + label + section [lang="en"] {
+#is-en:not(:checked) + label + section [lang="en"],
+#is-en:checked + label + section [lang="ja"] {
   display: none;
 }
 
@@ -151,7 +151,7 @@ body {
       <input type="checkbox" id="is-en" checked>
       <label for="is-en"></label>
       <section>
-        <h1>in-browser-sass</h1>
+        <h1>@neos21/in-browser-sass</h1>
         <p lang="en">Compile SASS / SCSS in the browser.</p>
         <p lang="ja">ブラウザ上で SASS / SCSS コードをコンパイルし Web ページに適用するライブラリ。</p>
         <section>

@@ -1,4 +1,4 @@
-# in-browser-sass
+# @neos21/in-browser-sass
 
 Compile SASS / SCSS in the browser.
 

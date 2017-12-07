@@ -1,4 +1,4 @@
-# in-browser-sass
+# @neos21/in-browser-sass
 
 ブラウザ上で SASS / SCSS コードをコンパイルし Web ページに適用するライブラリ。
 
