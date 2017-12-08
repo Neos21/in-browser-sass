@@ -9,4 +9,12 @@ body {
       color: #f09;
     }
   }
+  
+  .npm-version {
+    transition: .2s;
+    
+    &:hover {
+      opacity: .85;
+    }
+  }
 }
