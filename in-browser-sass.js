@@ -1,4 +1,4 @@
-/*! in-browser-sass v1.0.2 : Neo (@Neos21) http://neo.s21.xrea.com/ */
+/*! in-browser-sass v1.0.3 : Neo (@Neos21) http://neo.s21.xrea.com/ */
 
 /** SASS・SCSS ソースコードを CSS にコンパイルし style 要素として元要素の直後に挿入する */
 function inBrowserSass() {
