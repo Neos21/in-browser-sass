@@ -27,6 +27,16 @@ Compile SASS / SCSS in the browser.
 - https://unpkg.com/sass.js@0.10.7/dist/sass.sync.js
 
 
+## Standalone Version
+
+Standalone version includes sass.js. So installation needs one line:
+
+```html
+<!-- Load this script included sass.js -->
+<script src="in-browser-sass-standalone.js"></script>
+```
+
+
 ## Usage
 
 You can use `link` or `style` elements for include SASS / SCSS. `type="text/sass"` or `type="text/sass"` attribute must be set.

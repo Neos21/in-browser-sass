@@ -27,6 +27,16 @@
 - https://unpkg.com/sass.js@0.10.7/dist/sass.sync.js
 
 
+## スタンドアロン版
+
+スタンドアロン版は sass.js を内蔵している。そのため、インストールは以下の1行で済む。
+
+```html
+<!-- Load this script included sass.js -->
+<script src="in-browser-sass-standalone.js"></script>
+```
+
+
 ## 使い方
 
 HTML 中に `link` 要素もしくは `style` 要素で SASS / SCSS コードを挿入する。`type="text/sass"` か `type="text/sass"` の属性を付与すること。

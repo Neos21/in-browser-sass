@@ -1,4 +1,6 @@
-/*! in-browser-sass v1.0.4 : Neo (@Neos21) http://neo.s21.xrea.com/ */
+/*! in-browser-sass-standalone v1.0.4 : Neo (@Neos21) http://neo.s21.xrea.com/ */
+
+/*! Sass.js */
 
 (() => {
   
@@ -48,20 +50,8 @@
   if(typeof document !== 'undefined') {
     // body 要素内の style 要素も取得するため全ての DOM 解析が終わってから実行する
     document.addEventListener('DOMContentLoaded', () => {
-      if(typeof Sass === 'undefined') {
-        // グローバルに Sass がない場合は CDN から Sass.js の取得を試みる
-        const sassElem = document.createElement('script');
-        sassElem.type = 'text/javascript';
-        sassElem.src = 'https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.10.7/sass.sync.min.js';
-        sassElem.onload = inBrowserSass;  // script 要素の onload 属性で browserSass() を実行する
-        sassElem.onerror = console.error('Sass.js Not Found. Abort'); // Sass.js の読み込みが失敗した場合
-        document.head.appendChild(sassElem);
-        // NOTE : Sass.js の読み込みが失敗した場合は sassElem.onerror で確認する。appendChild() までは失敗しないのでこの処理を try catch で囲んでも意味なし
-      }
-      else {
-        // Sass が読み込んである場合は処理を実行する
-        inBrowserSass();
-      }
+      // Sass.js を内蔵してあるので直接処理を実行する
+      inBrowserSass();
     });
   }
   
