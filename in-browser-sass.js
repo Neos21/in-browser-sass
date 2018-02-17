@@ -1,4 +1,4 @@
-/*! in-browser-sass v1.0.4 : Neo (@Neos21) http://neo.s21.xrea.com/ */
+/*! in-browser-sass v1.0.5 : Neo (@Neos21) http://neo.s21.xrea.com/ */
 
 (() => {
   
