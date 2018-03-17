@@ -9,7 +9,7 @@
 
 ## デモ
 
-[デモ (GitHub Pages)](https://neos21github.github.io/in-browser-sass/)
+__[デモ (GitHub Pages)](https://neos21.github.io/in-browser-sass/)__
 
 
 ## インストール方法
@@ -125,8 +125,8 @@ body p {
 
 [Neo](http://neo.s21.xrea.com/) ([@Neos21](https://twitter.com/neos21))
 
-- [GitHub - in-browser-sass](https://github.com/Neos21GitHub/in-browser-sass)
-- [GitHub Pages - in-browser-sass](https://neos21github.github.io/in-browser-sass/)
+- [GitHub - in-browser-sass](https://github.com/Neos21/in-browser-sass)
+- [GitHub Pages - in-browser-sass](https://neos21.github.io/in-browser-sass/)
 - [npm - @neos21/in-browser-sass](https://www.npmjs.com/package/@neos21/in-browser-sass)
 
 
@@ -137,4 +137,4 @@ body p {
 - [Murga](http://neos21.hatenablog.jp/)
 - [El Mylar](http://neos21.hateblo.jp/)
 - [Bit-Archer](http://bit-archer.hatenablog.com/)
-- [GitHub - Neos21GitHub](https://github.com/Neos21GitHub/)
+- [GitHub - Neos21](https://github.com/Neos21/)

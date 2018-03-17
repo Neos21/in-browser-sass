@@ -1,6 +1,6 @@
 {
   "name": "@neos21/in-browser-sass",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Compile SASS / SCSS in the browser.",
   "main": "in-browser-sass.js",
   "scripts": {
@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Neos21GitHub/in-browser-sass.git"
+    "url": "git+https://github.com/Neos21/in-browser-sass.git"
   },
   "author": "Neos21 <neos21@gmail.com> (http://neo.s21.xrea.com/)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Neos21GitHub/in-browser-sass/issues"
+    "url": "https://github.com/Neos21/in-browser-sass/issues"
   },
-  "homepage": "https://github.com/Neos21GitHub/in-browser-sass#readme",
+  "homepage": "https://github.com/Neos21/in-browser-sass#readme",
   "devDependencies": {
     "http-server": "0.10.0",
     "sass.js": "0.10.7",
