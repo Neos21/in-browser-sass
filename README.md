@@ -52,14 +52,14 @@ You can use `link` or `style` elements for include SASS / SCSS. `type="text/sass
 <style type="text/sass">
 body
   p
-color: #f00
+    color: #f00
 </style>
 
 <!-- SCSS : style tag -->
 <style type="text/scss">
 body {
   p {
-font-weight: bold;
+    font-weight: bold;
   }
 }
 </style>
@@ -93,7 +93,7 @@ a:hover {
 <style type="text/sass">
 body
   p
-color: #f00
+    color: #f00
 </style>
 <!-- Compiled inline SASS -->
 <style type="text/css">
@@ -106,7 +106,7 @@ body p {
 <style type="text/scss">
 body {
   p {
-font-weight: bold;
+    font-weight: bold;
   }
 }
 </style>
