@@ -136,5 +136,5 @@ Compiled `style` elements are inserted after each original element.
 - [Corredor](http://neos21.hatenablog.com/)
 - [Murga](http://neos21.hatenablog.jp/)
 - [El Mylar](http://neos21.hateblo.jp/)
-- [Bit-Archer](http://bit-archer.hatenablog.com/)
+- [Neo's GitHub Pages](https://neos21.github.io/)
 - [GitHub - Neos21](https://github.com/Neos21/)
