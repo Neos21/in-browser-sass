@@ -1,4 +1,4 @@
-/*! in-browser-sass-standalone v1.0.4 : Neo (@Neos21) http://neo.s21.xrea.com/ */
+/*! in-browser-sass-standalone v1.0.8 : Neo (@Neos21) http://neo.s21.xrea.com/ */
 
 /*! Sass.js */
 

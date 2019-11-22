@@ -1,4 +1,4 @@
-# @neos21/in-browser-sass
+# in-browser-sass : @neos21/in-browser-sass
 
 [![NPM Version](https://img.shields.io/npm/v/@neos21/in-browser-sass.svg)](https://www.npmjs.com/package/@neos21/in-browser-sass)
 
@@ -23,8 +23,8 @@ __[デモ (GitHub Pages)](https://neos21.github.io/in-browser-sass/)__
 
 [sass.js](https://github.com/medialize/sass.js) の CDN は以下が利用可能。
 
-- https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.10.7/sass.sync.min.js
-- https://unpkg.com/sass.js@0.10.7/dist/sass.sync.js
+- <https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.10.7/sass.sync.min.js>
+- <https://unpkg.com/sass.js@0.10.7/dist/sass.sync.js>
 
 
 ## スタンドアロン版
@@ -126,7 +126,7 @@ body p {
 [Neo](http://neo.s21.xrea.com/) ([@Neos21](https://twitter.com/Neos21))
 
 - [GitHub - in-browser-sass](https://github.com/Neos21/in-browser-sass)
-- [GitHub Pages - in-browser-sass](https://neos21.github.io/in-browser-sass/)
+- [GitHub Pages - in-browser-sass : @neos21/in-browser-sass](https://neos21.github.io/in-browser-sass/)
 - [npm - @neos21/in-browser-sass](https://www.npmjs.com/package/@neos21/in-browser-sass)
 
 

@@ -1,6 +1,6 @@
 {
   "name": "@neos21/in-browser-sass",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Compile SASS / SCSS in the browser.",
   "main": "in-browser-sass.js",
   "scripts": {
@@ -10,16 +10,20 @@
     "minify-standalone": "uglifyjs --compress --mangle --comments /^!/ --output in-browser-sass-standalone.min.js -- ./src/in-browser-sass-standalone.js",
     "build-standalone": "npm run minify-standalone && node ./scripts/build-standalone.js"
   },
+  "author": "Neos21 <neos21@gmail.com> (http://neo.s21.xrea.com/)",
+  "license": "MIT",
+  "homepage": "https://github.com/Neos21/in-browser-sass#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Neos21/in-browser-sass.git"
   },
-  "author": "Neos21 <neos21@gmail.com> (http://neo.s21.xrea.com/)",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/Neos21/in-browser-sass/issues"
   },
-  "homepage": "https://github.com/Neos21/in-browser-sass#readme",
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/Neos21"
+  },
   "devDependencies": {
     "http-server": "0.10.0",
     "sass.js": "0.10.7",
