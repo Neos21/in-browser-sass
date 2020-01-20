@@ -19,8 +19,8 @@
 /* Normal CSS */
 
 *,
-*::before,
-*::after {
+::before,
+::after {
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
       -ms-box-sizing: border-box;
@@ -29,13 +29,13 @@
 }
 
 @font-face {
-  font-family: "Yu Gothic M";
-  src: local("Yu Gothic Medium");
+  font-family: "Yu Gothic";
+  src: local("Yu Gothic Medium"), local("YuGothic-Medium");
 }
 
 @font-face {
-  font-family: "Yu Gothic M";
-  src: local("Yu Gothic Bold");
+  font-family: "Yu Gothic";
+  src: local("Yu Gothic Bold"), local("YuGothic-Bold");
   font-weight: bold;
 }
 
@@ -54,7 +54,7 @@ html {
 
 body {
   color: #000;
-  font-family: -apple-system, BlinkMacSystemFont, "游ゴシック体", YuGothic, "Yu Gothic M", "游ゴシック Medium", "Yu Gothic Medium", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN W3", HiraKakuProN-W3, "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, YuGothic, "Yu Gothic", "Hiragino Sans", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   -webkit-text-size-adjust: 100%;
   word-wrap: break-word;
   background: #fff;  /* Override */
@@ -74,7 +74,7 @@ footer {
 
 pre,
 code {
-  font-family: MeiryoKe_Gothic, "Ricty Diminished", "Osaka－等幅", "Osaka-等幅", Osaka-mono, "ＭＳ ゴシック", "MS Gothic", "Courier New", Courier, Monaco, Menlo, Consolas, "Lucida Console", monospace;
+  font-family: MeiryoKe_Gothic, Osaka-mono, "MS Gothic", "Courier New", monospace;
 }
 
 main {
