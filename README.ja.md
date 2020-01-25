@@ -123,7 +123,7 @@ body p {
 
 ## 作者
 
-[Neo](http://neo.s21.xrea.com/) ([@Neos21](https://twitter.com/Neos21))
+[Neo](http://neo.s21.xrea.com/)
 
 - [GitHub - in-browser-sass](https://github.com/Neos21/in-browser-sass)
 - [GitHub Pages - in-browser-sass : @neos21/in-browser-sass](https://neos21.github.io/in-browser-sass/)
