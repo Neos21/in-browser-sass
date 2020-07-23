@@ -1,0 +1,33 @@
+name: Publish To GPR
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+jobs:
+  publish-to-gpr:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Use Node.js And Setup .npmrc
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+          registry-url: 'https://npm.pkg.github.com'
+          scope       : '@neos21'
+          always-auth : true
+        env :
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Can npm Publish
+        run : |
+          npm install can-npm-publish
+          npx can-npm-publish --verbose
+        env :
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # npm install
+      # npm run build
+      - name: Publish
+        run : npm publish
+        env :
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
