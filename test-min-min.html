@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>in-browser-sass : @neos21/in-browser-sass</title>
+    
+    <!-- Load Sass.js -->
+    <script src="./sass.sync.min.js"></script>
+    
+    <!-- Load in-browser-sass -->
+    <script src="./in-browser-sass.min.js"></script>
+    
+    <!-- SASS : Link Tag -->
+    <link rel="stylesheet" type="text/sass" href="example.sass">
+    
+    <style type="text/css">
+
+/* Normal CSS */
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+html {
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+body {
+  color: #000;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, "Noto Sans CJK JP", YuGothic, "Yu Gothic", "Hiragino Sans", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  -webkit-text-size-adjust: 100%;
+  word-wrap: break-word;
+  background: #fff;  /* Override */
+}
+
+header {
+  padding: 1em 1rem;
+  font-size: 150%;
+  font-weight: bold;
+  text-align: center;
+}
+
+footer {
+  padding: 1em 1rem;
+  text-align: center;
+}
+
+pre,
+code {
+  font-family: MeiryoKe_Gothic, "Noto Sans Mono CJK JP", Osaka-mono, "MS Gothic", "Courier New", monospace;
+}
+
+main {
+  text-align: right;
+}
+
+main > section {
+  text-align: left;
+}
+
+#is-en {
+  display: none;
+}
+
+#is-en + label {
+  position: sticky;
+  top: 1rem;
+}
+
+#is-en + label::after {
+  content: "English Version";
+  padding: .2rem .5rem;
+  border-radius: 4px;
+  color: #fff;
+  background: rgba(0, 80, 160, .7);
+  transition: background .2s;
+  cursor: pointer;
+}
+
+#is-en + label:hover::after {
+  background: rgba(0, 50, 110, .7);
+}
+
+#is-en:checked + label::after {
+  content: "Japanese Version";
+}
+
+#is-en:not(:checked) + label + section [lang="en"],
+#is-en:checked + label + section [lang="ja"] {
+  display: none;
+}
+
+    </style>
+    
+    <!-- SCSS : Link Tag -->
+    <link rel="stylesheet" type="text/scss" href="example.scss">
+    
+    <style type="text/scss">
+
+/* SCSS : Style Tag */
+
+body {
+  cursor: default;
+  
+  * {
+    &::selection {
+      color: #fff;
+      background: #f09;
+    }
+    
+    // Selection for Firefox
+    &::-moz-selection {
+      color: #fff;
+      background: #f09;
+    }
+  }
+  
+  header a {
+    color: #000;
+    text-decoration: none;
+  }
+}
+
+    </style>
+    
+    <link rel="icon" href="/favicon.ico">
+    <link rel="icon" href="/favicon-192x192.png" sizes="192x192" type="image/png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon-152x152.png" sizes="152x152">
+  </head>
+  <body>
+    <header><a href="https://github.com/Neos21/in-browser-sass">in-browser-sass</a></header>
+    <main>
+      <input type="checkbox" id="is-en" checked>
+      <label for="is-en"></label>
+      <section>
+        <h1>@neos21/in-browser-sass</h1>
+        <p>
+          <a href="https://www.npmjs.com/package/@neos21/in-browser-sass" class="npm-version"><img src="https://img.shields.io/npm/v/@neos21/in-browser-sass.svg" alt="NPM Version" title="NPM Version"></a>
+          <a href="https://github.com/Neos21/in-browser-sass/packages/326130" class="gpr-version"><img src="https://img.shields.io/github/package-json/v/neos21/in-browser-sass?label=github" alt="GPR Version" title="GPR Version"></a>
+        </p>
+        <p lang="en">Compile SASS / SCSS in the browser.</p>
+        <p lang="ja">ブラウザ上で SASS / SCSS コードをコンパイルし Web ページに適用するライブラリ。</p>
+        <section>
+          <h2 lang="en">Installation</h2>
+          <h2 lang="ja">インストール方法</h2>
+          <pre><code class="html">&lt;!-- Load sass.js --&gt;
+&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.11.1/sass.sync.min.js&quot;&gt;&lt;/script&gt;
+&lt;!-- Load this script --&gt;
+&lt;script src=&quot;in-browser-sass.js&quot;&gt;&lt;/script&gt;</code></pre>
+          <p lang="en"><a href="https://github.com/medialize/sass.js">sass.js</a> CDNs are available here:</p>
+          <p lang="ja"><a href="https://github.com/medialize/sass.js">sass.js</a> の CDN は以下が利用可能。</p>
+          <ul>
+            <li><a href="https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.11.1/sass.sync.min.js">https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.11.1/sass.sync.min.js</a></li>
+            <li><a href="https://unpkg.com/sass.js@0.11.1/dist/sass.sync.js">https://unpkg.com/sass.js@0.11.1/dist/sass.sync.js</a></li>
+          </ul>
+        </section>
+        <section>
+          <h2 lang="en">Bundle Version</h2>
+          <h2 lang="ja">バンドル版</h2>
+          <p lang="en">Bundle version includes sass.js. So installation needs one line:</p>
+          <p lang="ja">バンドル版は sass.js を内蔵している。そのため、インストールは以下の1行で済む。</p>
+          <pre><code class="html">&lt;!-- Load this script included sass.js --&gt;
+&lt;script src=&quot;in-browser-sass.bundle.js&quot;&gt;&lt;/script&gt;</code></pre>
+        </section>
+        <section>
+          <h2 lang="en">Usage</h2>
+          <h2 lang="ja">使い方</h2>
+          <p lang="en">You can use <code>link</code> or <code>style</code> elements for include SASS / SCSS. <code>type=&quot;text/sass&quot;</code> or <code>type=&quot;text/sass&quot;</code> attribute must be set.</p>
+          <p lang="ja">HTML 中に <code>link</code> 要素もしくは <code>style</code> 要素で SASS / SCSS コードを挿入する。<code>type=&quot;text/sass&quot;</code> か <code>type=&quot;text/sass&quot;</code> の属性を付与すること。</p>
+          <pre><code class="html">&lt;!-- SASS : link tag --&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/sass&quot; href=&quot;example.sass&quot;&gt;
+
+&lt;!-- SCSS : link tag --&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/scss&quot; href=&quot;example.scss&quot;&gt;
+
+&lt;!-- SASS : style tag --&gt;
+&lt;style type=&quot;text/sass&quot;&gt;
+body
+  p
+    color: #f00
+&lt;/style&gt;
+
+&lt;!-- SCSS : style tag --&gt;
+&lt;style type=&quot;text/scss&quot;&gt;
+body {
+  p {
+    font-weight: bold;
+  }
+}
+&lt;/style&gt;</code></pre>
+          <p lang="en">This compiles to:</p>
+          <p lang="ja">これが以下のようにコンパイル・適用される。</p>
+          <pre><code class="html">&lt;!-- SASS : link tag --&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/sass&quot; href=&quot;example.sass&quot;&gt;
+&lt;!-- Compiled example.sass --&gt;
+&lt;style type=&quot;text/css&quot;&gt;
+body &gt; selection {
+  font-size: 110%;
+}
+&lt;/style&gt;
+
+&lt;!-- SCSS : link tag --&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/scss&quot; href=&quot;example.scss&quot;&gt;
+&lt;!-- Compiled example.scss --&gt;
+&lt;style type=&quot;text/css&quot;&gt;
+a {
+  color: #06f;
+}
+a:hover {
+  color: #f09;
+}
+&lt;/style&gt;
+
+&lt;!-- SASS : style tag --&gt;
+&lt;style type=&quot;text/sass&quot;&gt;
+body
+  p
+    color: #f00
+&lt;/style&gt;
+&lt;!-- Compiled inline SASS --&gt;
+&lt;style type=&quot;text/css&quot;&gt;
+body p {
+  color: #ff0;
+}
+&lt;/style&gt;
+
+&lt;!-- SCSS : style tag --&gt;
+&lt;style type=&quot;text/scss&quot;&gt;
+body {
+  p {
+    font-weight: bold;
+  }
+}
+&lt;/style&gt;
+&lt;!-- Compiled inline SCSS --&gt;
+&lt;style type=&quot;text/css&quot;&gt;
+body p {
+  font-weight: bold;
+}
+&lt;/style&gt;</code></pre>
+          <p lang="en">Compiled <code>style</code> elements are inserted after each original element.</p>
+          <p lang="ja">コンパイル後の CSS ソースを持つ <code>style</code> 要素は、元の要素の直後に挿入される。</p>
+          <p lang="en"><code>@import</code> is not supported.</p>
+          <p lang="ja"><code>@import</code> 記法には対応していない。</p>
+        </section>
+        <section>
+          <h2 lang="en">Author</h2>
+          <h2 lang="ja">作者</h2>
+          <p><a href="http://neo.s21.xrea.com/">Neo</a></p>
+          <ul>
+            <li><a href="https://github.com/Neos21/in-browser-sass">GitHub - in-browser-sass</a></li>
+            <li><a href="https://neos21.github.io/in-browser-sass/">GitHub Pages - in-browser-sass : @neos21/in-browser-sass</a></li>
+            <li><a href="https://www.npmjs.com/package/@neos21/in-browser-sass">npm - @neos21/in-browser-sass</a></li>
+          </ul>
+        </section>
+        <section>
+          <h2>Links</h2>
+          <ul>
+            <li><a href="http://neo.s21.xrea.com/">Neo's World</a></li>
+            <li><a href="https://neos21.hatenablog.com/">Corredor</a></li>
+            <li><a href="https://neos21.hatenablog.jp/">Murga</a></li>
+            <li><a href="https://neos21.hateblo.jp/">El Mylar</a></li>
+            <li><a href="https://neos21.github.io/">Neo's GitHub Pages</a></li>
+            <li><a href="https://github.com/Neos21/">GitHub - Neos21</a></li>
+          </ul>
+        </section>
+      </section>
+    </main>
+    <footer><small>Copyright &copy; 2017-2020 <a href="http://neo.s21.xrea.com/">Neo</a>, All rights reserved.</small></footer>
+    
+    <style type="text/sass">
+
+/* SASS : Style Tag */
+
+// For code blocks
+@mixin code-block
+  border: 1px solid #ccc
+  border-radius: 4px
+
+pre
+  @include code-block
+  line-height: 1.4
+  overflow: scroll
+
+*:not(pre) > code
+  @include code-block
+  font-size: 94%
+  padding: 1px 6px
+  background: #eee
+
+    </style>
+  </body>
+</html>
