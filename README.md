@@ -1,6 +1,6 @@
 # in-browser-sass : @neos21/in-browser-sass
 
-[![NPM Version](https://img.shields.io/npm/v/@neos21/in-browser-sass.svg)](https://www.npmjs.com/package/@neos21/in-browser-sass)
+[![NPM Version](https://img.shields.io/npm/v/@neos21/in-browser-sass.svg)](https://www.npmjs.com/package/@neos21/in-browser-sass) [![GPR Version](https://img.shields.io/github/package-json/v/neos21/in-browser-sass?label=github)](https://github.com/Neos21/in-browser-sass/packages/326130)
 
 Compile SASS / SCSS in the browser.
 

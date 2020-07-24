@@ -10,7 +10,8 @@ body {
     }
   }
   
-  .npm-version {
+  .npm-version,
+  .gpr-version {
     transition: .2s;
     
     &:hover {
