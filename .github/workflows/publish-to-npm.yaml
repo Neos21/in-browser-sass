@@ -19,16 +19,18 @@ jobs:
           always-auth : true
         env :
           NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
-      - name: Can npm Publish
-        run : |
-          npm install can-npm-publish
-          npx can-npm-publish --verbose
+      - name: Can Publish
+        run : npx can-npm-publish --verbose
         env :
           NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
       - name: Install
         run : npm install
-      - name: Build To dist/ And public/ Directory
-        run : npm run build
+        env :
+          NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
+      - name: Build
+        run : npm run build --if-present
+        env :
+          NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
       - name: Publish
         run : npm publish --access=public
         env :
