@@ -1,0 +1,13 @@
+.DS_Store
+Thumbs.db
+
+*.log
+
+act/
+node_modules/
+
+# for GitHub Pages
+public/
+
+# for .npmignore
+.github/workflows/
