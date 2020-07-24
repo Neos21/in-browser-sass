@@ -1,32 +1,29 @@
 {
   "name": "@neos21/in-browser-sass",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Compile SASS / SCSS in the browser.",
   "main": "in-browser-sass.js",
   "scripts": {
-    "start": "http-server ./docs/",
-    "build": "npm run minify && npm run build-standalone",
-    "minify": "uglifyjs --compress --mangle --comments /^!/ --output in-browser-sass.min.js -- in-browser-sass.js",
-    "minify-standalone": "uglifyjs --compress --mangle --comments /^!/ --output in-browser-sass-standalone.min.js -- ./src/in-browser-sass-standalone.js",
-    "build-standalone": "npm run minify-standalone && node ./scripts/build-standalone.js"
+    "start": "npm run build && http-server ./public/",
+    "build": "node ./scripts/build.js"
   },
   "author": "Neos21 <neos21@gmail.com> (http://neo.s21.xrea.com/)",
   "license": "MIT",
   "homepage": "https://github.com/Neos21/in-browser-sass#readme",
+  "bugs": {
+    "url": "https://github.com/Neos21/in-browser-sass/issues"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Neos21/in-browser-sass.git"
-  },
-  "bugs": {
-    "url": "https://github.com/Neos21/in-browser-sass/issues"
   },
   "funding": {
     "type": "github",
     "url": "https://github.com/sponsors/Neos21"
   },
   "devDependencies": {
-    "http-server": "0.10.0",
-    "sass.js": "0.10.7",
-    "uglify-es": "3.2.1"
+    "http-server": "0.12.3",
+    "sass.js": "0.11.1",
+    "uglify-es": "3.3.9"
   }
 }

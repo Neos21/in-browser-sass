@@ -16,24 +16,24 @@ __[デモ (GitHub Pages)](https://neos21.github.io/in-browser-sass/)__
 
 ```html
 <!-- Load sass.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.10.7/sass.sync.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.11.1/sass.sync.min.js"></script>
 <!-- Load this script -->
 <script src="in-browser-sass.js"></script>
 ```
 
 [sass.js](https://github.com/medialize/sass.js) の CDN は以下が利用可能。
 
-- <https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.10.7/sass.sync.min.js>
-- <https://unpkg.com/sass.js@0.10.7/dist/sass.sync.js>
+- <https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.11.1/sass.sync.min.js>
+- <https://unpkg.com/sass.js@0.1!.1/dist/sass.sync.js>
 
 
-## スタンドアロン版
+## バンドル版
 
-スタンドアロン版は sass.js を内蔵している。そのため、インストールは以下の1行で済む。
+バンドル版は sass.js を内蔵している。そのため、インストールは以下の1行で済む。
 
 ```html
 <!-- Load this script included sass.js -->
-<script src="in-browser-sass-standalone.js"></script>
+<script src="in-browser-sass.bundle.js"></script>
 ```
 
 
@@ -119,6 +119,8 @@ body p {
 ```
 
 コンパイル後の CSS ソースを持つ `style` 要素は、元の要素の直後に挿入される。
+
+`@import` 記法には対応していない。
 
 
 ## 作者

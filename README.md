@@ -16,24 +16,24 @@ __[Demo (GitHub Pages)](https://neos21.github.io/in-browser-sass/)__
 
 ```html
 <!-- Load sass.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.10.7/sass.sync.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.11.1/sass.sync.min.js"></script>
 <!-- Load this script -->
 <script src="in-browser-sass.js"></script>
 ```
 
 [sass.js](https://github.com/medialize/sass.js) CDNs are available here:
 
-- <https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.10.7/sass.sync.min.js>
-- <https://unpkg.com/sass.js@0.10.7/dist/sass.sync.js>
+- <https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.11.1/sass.sync.min.js>
+- <https://unpkg.com/sass.js@0.11.1/dist/sass.sync.js>
 
 
-## Standalone Version
+## Bundle Version
 
-Standalone version includes sass.js. So installation needs one line:
+Bundle version includes sass.js. So installation needs one line:
 
 ```html
 <!-- Load this script included sass.js -->
-<script src="in-browser-sass-standalone.js"></script>
+<script src="in-browser-sass.bundle.js"></script>
 ```
 
 
@@ -119,6 +119,8 @@ body p {
 ```
 
 Compiled `style` elements are inserted after each original element.
+
+`@import` is not supported.
 
 
 ## Author
