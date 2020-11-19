@@ -123,20 +123,10 @@ Compiled `style` elements are inserted after each original element.
 `@import` is not supported.
 
 
-## Author
-
-[Neo](http://neo.s21.xrea.com/)
-
-- [GitHub - in-browser-sass](https://github.com/Neos21/in-browser-sass)
-- [GitHub Pages - in-browser-sass : @neos21/in-browser-sass](https://neos21.github.io/in-browser-sass/)
-- [npm - @neos21/in-browser-sass](https://www.npmjs.com/package/@neos21/in-browser-sass)
-
-
 ## Links
 
-- [Neo's World](http://neo.s21.xrea.com/)
-- [Corredor](https://neos21.hatenablog.com/)
-- [Murga](https://neos21.hatenablog.jp/)
-- [El Mylar](https://neos21.hateblo.jp/)
-- [Neo's GitHub Pages](https://neos21.github.io/)
+- [Neo's World](https://neos21.net/)
 - [GitHub - Neos21](https://github.com/Neos21/)
+- [GitHub - in-browser-sass](https://github.com/Neos21/in-browser-sass)
+- [GitHub Pages - @neos21/in-browser-sass](https://neos21.github.io/in-browser-sass/)
+- [npm - @neos21/in-browser-sass](https://www.npmjs.com/package/@neos21/in-browser-sass)
