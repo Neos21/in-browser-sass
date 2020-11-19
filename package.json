@@ -7,7 +7,7 @@
     "start": "npm run build && http-server ./public/",
     "build": "node ./scripts/build.js"
   },
-  "author": "Neos21 <neos21@gmail.com> (http://neo.s21.xrea.com/)",
+  "author": "Neos21 <neos21@gmail.com> (https://neos21.net/)",
   "license": "MIT",
   "homepage": "https://github.com/Neos21/in-browser-sass#readme",
   "bugs": {
