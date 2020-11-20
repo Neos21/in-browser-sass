@@ -1,6 +1,6 @@
 /*! Load Sass.js First */
 
-/*! in-browser-sass : http://neo.s21.xrea.com/ */
+/*! in-browser-sass : https://neos21.net/ */
 (() => {
   
   /** SASS・SCSS ソースコードを CSS にコンパイルし style 要素として元要素の直後に挿入する */
